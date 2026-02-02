@@ -61,7 +61,19 @@ python -m dork search.dork           # Run as a module
 ```
 
 > [!NOTE]
-> On Windows you can also run `dork` directly using the included `dork.cmd` or `dork.ps1`.
+> **Windows users:** Wrapper scripts are included for convenience.
+>
+> **Command Prompt (cmd.exe):**
+> ```cmd
+> dork search.dork
+> ```
+>
+> **PowerShell:**
+> ```powershell
+> .\dork search.dork
+> ```
+> PowerShell doesn't run commands from the current directory without `.\` prefix.
+> May also require `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` to allow scripts.
 
 Engines: `google`, `bing`, `ddg`, `github`, `shodan`  
 Run `python dork.py --engines` for the full list.
