@@ -23,7 +23,7 @@ A good search query is knowledge worth preserving. Stop losing yours.
 ## Quick Start
 
 ```bash
-python dork.py recon.dork
+python dork.py search.dork
 ```
 
 That's it.
