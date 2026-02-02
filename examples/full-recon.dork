@@ -2,7 +2,7 @@
 # Run: python dork.py examples/full-recon.dork TARGET=company.com
 # Or:  python dork.py examples/full-recon.dork TARGET=company.com -p
 
-@var TARGET = example.com
+@var TARGET = dorkscript.com
 
 # Include base recon queries (exposed files, directories, errors)
 @include common/base-recon.dork

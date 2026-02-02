@@ -1,7 +1,7 @@
 # Academic Research - Systematic literature searching
 # For reproducible research methodology
 
-@var TOPIC = machine learning healthcare
+@var TOPIC = osint dorkscript archive
 
 # Open access papers
 site:arxiv.org "$TOPIC"

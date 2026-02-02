@@ -1,8 +1,8 @@
 # OSINT Person Search - Find public information about individuals
 # For legitimate research only
 
-@var NAME = "John Smith"
-@var EMAIL = john@example.com
+@var NAME = "Dork Script"
+@var EMAIL = hello@dorkscript.com
 
 # Social and professional presence
 "$NAME" site:linkedin.com

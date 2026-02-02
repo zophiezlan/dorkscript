@@ -1,7 +1,7 @@
 # Public Documents - Find publicly available files
 # Useful for research, journalism, due diligence
 
-@var ORG = "company name"
+@var ORG = "DorkScript"
 
 # Financial and legal documents
 site:sec.gov "$ORG"

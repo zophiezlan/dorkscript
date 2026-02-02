@@ -2,8 +2,8 @@
 # Run: python dork.py examples/comprehensive-osint.dork TARGET=company.com
 # Or:  python dork.py examples/comprehensive-osint.dork TARGET=company.com -p
 
-@var TARGET = example.com
-@var ORG = Example Inc
+@var TARGET = dorkscript.com
+@var ORG = DorkScript
 
 # =============================================================================
 # INFRASTRUCTURE RECONNAISSANCE
