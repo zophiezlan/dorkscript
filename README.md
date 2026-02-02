@@ -64,14 +64,17 @@ python -m dork search.dork           # Run as a module
 > **Windows users:** Wrapper scripts are included for convenience.
 >
 > **Command Prompt (cmd.exe):**
+>
 > ```cmd
 > dork search.dork
 > ```
 >
 > **PowerShell:**
+>
 > ```powershell
 > .\dork search.dork
 > ```
+>
 > PowerShell doesn't run commands from the current directory without `.\` prefix.
 > May also require `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` to allow scripts.
 
@@ -118,7 +121,7 @@ See `/examples` for starter templates:
 
 ## Why Not Just Use Bookmarks?
 
-Bookmarks break when URLs change. You can't parameterize them. You can't version control them. You can't share a search *strategy*.
+Bookmarks break when URLs change. You can't parameterize them. You can't version control them. You can't share a search _strategy_.
 
 A .dork file captures your methodology, not just the results.
 
