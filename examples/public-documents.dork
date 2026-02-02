@@ -1,0 +1,19 @@
+# Public Documents - Find publicly available files
+# Useful for research, journalism, due diligence
+
+@var ORG = "company name"
+
+# Financial and legal documents
+site:sec.gov "$ORG"
+"$ORG" filetype:pdf "annual report"
+"$ORG" filetype:pdf "10-K" OR "10-Q"
+"$ORG" filetype:pdf "contract" OR "agreement"
+
+# Internal documents that went public
+"$ORG" filetype:pptx "confidential" OR "internal"
+"$ORG" filetype:docx "draft" OR "not for distribution"
+"$ORG" filetype:xlsx "budget" OR "forecast"
+
+# Meeting notes and memos
+"$ORG" filetype:pdf "meeting notes" OR "minutes"
+"$ORG" "memo" filetype:pdf

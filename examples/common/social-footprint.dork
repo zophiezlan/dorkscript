@@ -1,0 +1,20 @@
+# Social Footprint - Find mentions across social platforms
+# Requires $QUERY variable (company name, person name, etc.)
+
+@engine google
+"$QUERY" site:linkedin.com
+"$QUERY" site:twitter.com OR site:x.com
+"$QUERY" site:facebook.com
+"$QUERY" site:instagram.com
+"$QUERY" site:reddit.com
+"$QUERY" site:medium.com
+"$QUERY" site:youtube.com
+
+@engine twitter
+$QUERY
+
+@engine reddit
+$QUERY
+
+@engine linkedin
+$QUERY

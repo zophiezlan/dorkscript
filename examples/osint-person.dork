@@ -1,0 +1,25 @@
+# OSINT Person Search - Find public information about individuals
+# For legitimate research only
+
+@var NAME = "John Smith"
+@var EMAIL = john@example.com
+
+# Social and professional presence
+"$NAME" site:linkedin.com
+"$NAME" site:twitter.com OR site:x.com
+"$NAME" site:github.com
+
+# Public records and news
+"$NAME" site:gov
+"$NAME" filetype:pdf
+"$NAME" "press release" OR "announcement"
+
+# Email-based searches
+@engine google
+"$EMAIL"
+"$EMAIL" filetype:pdf OR filetype:doc
+
+# GitHub activity
+@engine github
+author:$EMAIL
+"$EMAIL"

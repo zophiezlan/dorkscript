@@ -1,0 +1,38 @@
+# Full Reconnaissance - Comprehensive target enumeration
+# Run: python dork.py examples/full-recon.dork TARGET=company.com
+# Or:  python dork.py examples/full-recon.dork TARGET=company.com -p
+
+@var TARGET = example.com
+
+# Include base recon queries (exposed files, directories, errors)
+@include common/base-recon.dork
+
+# Cloud storage leaks
+@engine google
+site:s3.amazonaws.com "$TARGET"
+site:blob.core.windows.net "$TARGET"
+site:storage.googleapis.com "$TARGET"
+site:digitaloceanspaces.com "$TARGET"
+
+# Code repositories
+@engine github
+"$TARGET"
+"$TARGET" password OR secret OR api_key
+org:$TARGET
+
+# Paste sites
+@engine google
+site:pastebin.com "$TARGET"
+site:gist.github.com "$TARGET"
+site:ghostbin.com "$TARGET"
+
+# Threat intel
+@engine virustotal
+$TARGET
+
+@engine urlscan
+domain:$TARGET
+
+# Historical data
+@engine archive
+$TARGET

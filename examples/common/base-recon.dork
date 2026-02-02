@@ -1,0 +1,22 @@
+# Base Recon Queries - Include this in your target-specific dork files
+# Usage: @include common/base-recon.dork
+
+# Requires $TARGET variable to be defined
+
+# Exposed files
+@engine google
+site:$TARGET filetype:pdf
+site:$TARGET filetype:doc OR filetype:docx
+site:$TARGET filetype:xls OR filetype:xlsx
+site:$TARGET filetype:ppt OR filetype:pptx
+
+# Sensitive directories
+site:$TARGET intitle:"index of"
+site:$TARGET inurl:admin
+site:$TARGET inurl:login
+site:$TARGET inurl:wp-admin OR inurl:wp-login
+
+# Error messages and debug info
+site:$TARGET "sql syntax" OR "mysql error"
+site:$TARGET "warning:" filetype:php
+site:$TARGET inurl:debug OR inurl:test

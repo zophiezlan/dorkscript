@@ -1,0 +1,27 @@
+# Academic Research - Systematic literature searching
+# For reproducible research methodology
+
+@var TOPIC = machine learning healthcare
+
+# Open access papers
+site:arxiv.org "$TOPIC"
+site:pubmed.gov "$TOPIC"
+site:ncbi.nlm.nih.gov "$TOPIC"
+
+# Institutional repositories
+site:edu "$TOPIC" filetype:pdf
+site:ac.uk "$TOPIC" filetype:pdf
+
+# Preprints and working papers
+site:ssrn.com "$TOPIC"
+site:researchgate.net "$TOPIC"
+site:biorxiv.org "$TOPIC"
+
+# Datasets
+site:kaggle.com "$TOPIC"
+site:github.com "$TOPIC" dataset
+site:huggingface.co "$TOPIC"
+
+# Conference proceedings
+"$TOPIC" "proceedings" filetype:pdf
+"$TOPIC" "conference" site:ieee.org

@@ -1,0 +1,195 @@
+# Comprehensive OSINT - Multi-engine target enumeration
+# Run: python dork.py examples/comprehensive-osint.dork TARGET=company.com
+# Or:  python dork.py examples/comprehensive-osint.dork TARGET=company.com -p
+
+@var TARGET = example.com
+@var ORG = Example Inc
+
+# =============================================================================
+# INFRASTRUCTURE RECONNAISSANCE
+# =============================================================================
+
+# Shodan - Internet-connected devices
+@engine shodan
+hostname:$TARGET
+
+# Censys - Certificate and host data
+@engine censys
+$TARGET
+
+# Certificate Transparency logs
+@engine crtsh
+%.$TARGET
+
+# DNS and subdomain enumeration
+@engine securitytrails
+$TARGET
+
+# Technology stack detection
+@engine builtwith
+$TARGET
+
+# =============================================================================
+# CODE & SECRETS
+# =============================================================================
+
+# GitHub - Source code leaks
+@engine github
+"$TARGET"
+
+@engine github-code
+"$TARGET" password OR secret OR api_key
+
+# GitLab
+@engine gitlab
+$TARGET
+
+# Search for code patterns
+@engine searchcode
+$TARGET
+
+# Pastebin leaks
+@engine paste-search
+$TARGET
+
+# =============================================================================
+# SOCIAL FOOTPRINT
+# =============================================================================
+
+# Twitter/X mentions
+@engine twitter
+"$ORG" OR "$TARGET"
+
+# Reddit discussions
+@engine reddit
+$TARGET
+
+# LinkedIn company
+@engine linkedin
+$ORG
+
+# Hacker News mentions
+@engine hackernews
+$TARGET
+
+# =============================================================================
+# DOCUMENT LEAKS
+# =============================================================================
+
+# Google - exposed documents
+@engine google
+site:$TARGET filetype:pdf OR filetype:doc OR filetype:xls
+site:$TARGET intitle:"index of"
+"$ORG" filetype:pdf confidential OR internal
+
+# Scribd documents
+@engine scribd
+"$ORG"
+
+# SlideShare presentations
+@engine slideshare
+"$ORG"
+
+# =============================================================================
+# ACADEMIC & RESEARCH
+# =============================================================================
+
+# Google Scholar - research papers
+@engine scholar
+"$ORG"
+
+# Semantic Scholar
+@engine semantic-scholar
+"$ORG"
+
+# =============================================================================
+# NEWS & PR
+# =============================================================================
+
+# Google News
+@engine google-news
+"$ORG"
+
+# Reuters
+@engine reuters
+"$ORG"
+
+# =============================================================================
+# BUSINESS INTELLIGENCE
+# =============================================================================
+
+# Crunchbase - company profile
+@engine crunchbase
+$ORG
+
+# OpenCorporates - corporate records
+@engine opencorporates
+$ORG
+
+# Offshore Leaks (ICIJ)
+@engine offshoreleaks
+$ORG
+
+# OCCRP Aleph - investigations
+@engine aleph-occrp
+$ORG
+
+# =============================================================================
+# ARCHIVED DATA
+# =============================================================================
+
+# Wayback Machine - historical snapshots
+@engine archive
+$TARGET
+
+# Archive.today
+@engine archive-today
+$TARGET
+
+# =============================================================================
+# BREACH & LEAK DATABASES
+# =============================================================================
+
+# Have I Been Pwned
+@engine haveibeenpwned
+$TARGET
+
+# Dehashed
+@engine dehashed
+$TARGET
+
+# IntelX
+@engine intelx
+$TARGET
+
+# =============================================================================
+# THREAT INTELLIGENCE
+# =============================================================================
+
+# VirusTotal
+@engine virustotal
+$TARGET
+
+# URLScan
+@engine urlscan
+domain:$TARGET
+
+# =============================================================================
+# DARK WEB (Clearnet interfaces)
+# =============================================================================
+
+# Ahmia - Tor search
+@engine ahmia
+$TARGET
+
+# =============================================================================
+# KNOWLEDGE BASES
+# =============================================================================
+
+# Wikipedia
+@engine wikipedia
+$ORG
+
+# Wikidata
+@engine wikidata
+$ORG
