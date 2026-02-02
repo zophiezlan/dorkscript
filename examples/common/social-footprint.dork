@@ -1,4 +1,6 @@
 # Social Footprint - Find mentions across social platforms
+# Usage: @include common/social-footprint.dork
+
 # Requires $QUERY variable (company name, person name, etc.)
 
 @engine google
