@@ -26,7 +26,7 @@ __version__ = "2.1.0"
 __license__ = "MIT"
 
 # =============================================================================
-# SEARCH ENGINES - 80+ engines organized by category
+# SEARCH ENGINES - 100+ engines organized by category
 # =============================================================================
 
 ENGINES = {
